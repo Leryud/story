@@ -15,6 +15,9 @@ class User(UserMixin, db.Model):
     location = db.Column(db.String(64), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     profilePicture = db.Column(db.String(128))
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    stories = db.relationship('Story', backref='author', lazy='dynamic')
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -27,12 +30,15 @@ class User(UserMixin, db.Model):
 
 class Story(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    titles = db.Column(db.String(256))
+    title = db.Column(db.String(256))
     body = db.Column(db.String(4096))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    storyPicture = db.Column(db.String(128))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Post {}>'.format(self.body)
+        return '<Story {}>'.format(self.body)
+    
+
 
 

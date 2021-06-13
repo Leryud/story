@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     
-    <link rel="shortcut icon" href="../img/filter-circle.svg">
+    <link rel="shortcut icon" href="../../img/filter-circle.svg">
     <title>Story</title>
   </head>
 
@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand " href="{{ url_for('home') }}">
-        <img src="../img/filter-circle.svg" width="30" height="30" class="d-inline-block align-top" style="margin-left: 5vh;" alt="logo">     Story.</a>
+        <img src="../../img/filter-circle.svg" width="30" height="30" class="d-inline-block align-top" style="margin-left: 5vh;" alt="logo">     Story.</a>
       <ul class="navbar-nav mr-auto d-flex align-items-center">
         <li class="nav-item active">
           <a class="nav-link" href="{{ url_for('home') }}">Home</a>
@@ -32,7 +32,7 @@
       <div class="dropdown" style="margin-left: auto; margin-right:10vh">
         <a href="#" class="inline d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
           <strong style="margin-right: 10px;">{{ current_user.username }}</strong>
-          <img src="{{ url_for('profile_picture')}}" alt="profile picture" width="48" height="48" class="rounded-circle">
+          <img src="{{ url_for('profile_picture') }}" alt="profile picture" width="48" height="48" class="rounded-circle">
         </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownMenuLink">
           <li><hr class="dropdown-divider"></li>
@@ -103,10 +103,10 @@
     </svg>
 
     <div class="container-xxl my-md-4 bd-layout body">
-      <div class="profile">
+      <div class="container profile mx-auto">
           <div class="profile_user">
               <div class="profile_pic">
-                <img class="img-fluid rounded-circle shadow p-2 mb-5 bg-white rounded" alt="200x200" src="{{url_for('profile_picture')}}" data-holder-rendered="true">
+                <img class="img-fluid rounded-circle shadow p-2 mb-5 bg-white rounded" width=200, height=200 alt="200x200" src="{{url_for('profile_picture')}}" data-holder-rendered="true">
               </div>
               <div class="profile_name">
                 <h3>{{current_user.username}}</h3>
@@ -119,27 +119,25 @@
 
                 <dt class="col-sm-3">Location</dt>
                 <dd class="col-sm-7">{{current_user.location}}</dd>
+
+                {% if current_user.about_me %}
+                <dt class="col-sm-3">About me</dt>
+                <dd class="col-sm-7">{{current_user.about_me}}</dd>
+                {% endif %}
             </dl>
           </div>
           <button type="button" class="btn btn-dark mx-auto">Modify info</button>
       </div> 
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="../js/main.js"></script>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
   </body>
 
-  <footer class="bd-footer py-5 mt-5 bg-light">
-    <h2>foot___</h2>
+  <footer class="footer fixed-bottom bg-light" style="opacity: 0.6">
+    <h6>By Léo Innocenzi for Software Engineering class at Dongguk University.</h6>
   </footer>
 
 </html>

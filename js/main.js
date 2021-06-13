@@ -8,7 +8,3 @@ $(document).ready(function(){
         $('#story').val('');
     });
 });
-
-function postStory() {
-
-}
