@@ -1,0 +1,85 @@
+
+.header { 
+    margin-left: 6rem;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.body {
+    min-height: 70vh;
+    display: flex;       /* NEW, Spec - Firefox, Chrome, Opera */
+    align-items: center;
+}
+
+.footer {
+    margin-top: 0 auto;
+    margin-bottom: 0px;
+}
+
+.card-style {
+    box-shadow: 2px 5px 4px grey;
+}
+
+#sidebar-tabs-container a{display:block}
+
+.login {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    height: 300px;
+    width: 500px;
+    border: 1px solid rgb(228, 225, 225);
+    border-radius: 5px;
+
+    margin-top: 5vh;
+}
+
+.register {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: auto;
+    border: 1px solid rgb(228, 225, 225);
+    border-radius: 5px;
+    margin-top: 5vh;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column; 
+    height: 350px;
+    width: 560px;
+    border: 1px solid rgb(228, 225, 225);
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10vh;
+    align-content: flex-start;
+}
+
+.profile_user {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile_pic {
+    order:1;
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.profile_name {
+    margin-top: 40px;
+    margin-left: 20px;
+    order:2;
+    font-weight: bold;
+}
+
+.profile_info {
+    margin-left: 2vh;
+    margin-top: 5vh;
+}
