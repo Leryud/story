@@ -120,7 +120,7 @@
                 <dt class="col-sm-3">Location</dt>
                 <dd class="col-sm-7">{{current_user.location}}</dd>
 
-                {% if current_user.about_me %}
+                {% if current_user.about_me != None %}
                 <dt class="col-sm-3">About me</dt>
                 <dd class="col-sm-7">{{current_user.about_me}}</dd>
                 {% endif %}
