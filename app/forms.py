@@ -8,7 +8,7 @@ from flask_uploads import UploadSet, IMAGES
 photos = UploadSet('photos', IMAGES)
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit_button = SubmitField('Login')
 

@@ -125,8 +125,10 @@
                 <dd class="col-sm-7">{{current_user.about_me}}</dd>
                 {% endif %}
             </dl>
+            <a href="{{url_for('edit_profile')}}" class="mx-auto">
+              <button type="button" class="btn btn-primary ">Modify info</button>
+            </a>
           </div>
-          <button type="button" class="btn btn-dark mx-auto">Modify info</button>
       </div> 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
